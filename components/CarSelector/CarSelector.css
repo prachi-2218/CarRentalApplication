@@ -1,0 +1,214 @@
+@import "tailwindcss";
+.car-filters-container {
+  width: 100%;
+  max-width: 100%; 
+  margin: 0 auto;     
+  padding: 80px 16px 20px;
+  background-color: #fffbf3;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Grid layout for fields */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  align-items: flex-end;
+}
+
+/* Field styling */
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.field label {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.gray-label {
+  color: #666;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Styling for select and date input elements */
+.compact select,
+.compact input[type="date"] {
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Slider control styling */
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 2px;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+/* Slider design */
+.dual-slider {
+  position: relative;
+  height: 18px;
+}
+
+.dual-slider input[type="range"] {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  margin: 0;
+  height: 18px;
+  background: transparent;
+  -webkit-appearance: none;
+  z-index: 2;
+}
+
+.dual-slider input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 4px;
+  height: 18px;
+  background: #cc1d1d;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.dual-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  width: 4px;
+  height: 18px;
+  background: #cc1d1d;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-track {
+  position: absolute;
+  height: 4px;
+  background-color: #cc1d1d;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dual-slider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 4px;
+}
+
+
+/* Button styling */
+.find-btn.red {
+  background-color: #cc1d1d;
+  color: white;
+  width: 220px;
+  height: 42px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  align-self: flex-end;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.find-btn.red:hover {
+  background-color: #c30000;
+}
+
+/* toast_filter message styling */
+.toast_filter {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffdddd;
+  color: #a94442;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #a94442;
+  border-radius: 8px;
+  z-index: 1000;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toast_filter .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #a94442;
+  cursor: pointer;
+}
+
+.clear-filters {
+  width: 120px;
+  height: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cc1d1d;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fffbf3; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: color 0.2s ease;
+}
+
+

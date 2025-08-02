@@ -1,0 +1,347 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 1.3rem;
+  background-color: #fffbf3;
+  font-family: sans-serif;
+}
+
+.header > div:first-child {
+  font-size: 1.1rem;
+  
+}
+
+.header > div:first-child span {
+  color: #cc0000;
+  font-weight: 600;
+}
+
+.navbar-header {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+}
+
+.auth-lang {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding-bottom: 4px;
+  position: relative;
+}
+.link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #cc0000;
+  border-radius: 1px;
+}
+
+.link:visited {
+  color: black;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position:relative;
+}
+.arrow-img {
+  height: 10px;
+  width: auto;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.bell-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.user-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.user-info {
+  display: flex;               
+  align-items: center;         
+  cursor: pointer;
+  gap: 0.4rem;                 
+  font-weight: 500;
+}
+
+
+.user-img.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: red;
+  color: black;
+  border: 1px solid black;
+  font-size: medium;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;  
+}
+
+
+
+.auth-lang > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.login-link {
+  text-decoration: none;
+}
+.login-link:active {
+  color: black;
+}
+
+.login-link:visited {
+  color: black;
+}
+.spaced-link {
+  margin-left: 2rem;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  height: 40px;
+  align-self: center;
+}
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #fffbf3;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 50;
+  padding: 8px 0;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  margin: 6px 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  padding:2px;
+  padding-left:18px;
+  color:#999794
+}
+
+.dropdown-item:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown-item.primary {
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 6px 8px;
+  padding:2px;
+  padding-left:18px;
+  
+}
+
+/* ✅ Language Dropdown Container */
+.lang-dropdown {
+  position: absolute;
+  top: 130%; /* Positioned slightly below the language selector */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem 0;
+  z-index: 1000;
+  min-width: 100px;
+  font-size: 0.85rem;
+}
+
+
+.lang-dropdown {
+  position: absolute;
+  top: 130%; 
+  right: 0;
+  background-color: #fffbf3;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.3rem 0;
+  min-width: 100px;
+  z-index: 1000;
+  font-size: 0.85rem;
+}
+
+
+.lang-option {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.lang-option:hover {
+  background-color: #f3f3f3;
+}
+
+
+.lang-option.primary {
+  font-weight: bold;
+  color: black;
+}
+
+
+
+@media (max-width: 650px) and (min-width: 300px) {
+  .hamburger {
+    display: block;
+    font-size: 18px;
+    position: absolute;
+    left: 1rem;
+
+    z-index: 20;
+  }
+
+  .navbar-header {
+    display: none;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    flex-direction: column;
+    background-color: #fffbf3;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .navbar-header.show {
+    display: flex;
+  }
+
+  .auth-lang {
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .user-img {
+    width: 14px;
+    height: 14px;
+    margin-right: 0.4rem;
+  }
+
+  .user-img.fallback {
+    width: 15px;
+    height: 15px;
+    font-size: 0.7rem;
+    border: 1px solid black;
+  }
+
+  .bell-icon-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lang-selector {
+    font-size: 0.7rem;
+    
+
+
+  }
+
+  .header {
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .login-link {
+    font-size: 0.75rem;
+  }
+
+  .header > div:first-child {
+    font-size: 0.7rem;
+  }
+
+  .logo-header {
+    padding-left: 2.1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    min-width: 140px;
+    font-size: 12px;
+  }
+
+  .dropdown-item {
+    padding: 8px 12px;
+  }
+}
+

@@ -1,0 +1,103 @@
+.container-main-page-aboutUs{
+    display: flex;
+   
+    background-color: #FFFBF3;
+    font-family: Arial, sans-serif
+}
+
+.main-page-1{
+    height: auto;
+    width: 40%;
+    
+    margin: 2px;
+    
+}
+
+.main-page-1>p{
+    color: gray;
+    margin-left: 5px;
+}
+
+.main-page-2{
+    height: auto;
+    width: 60%;
+    
+    margin: 2px;
+    display: flex;
+    
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.info{
+    
+    margin: 2px;
+    
+  
+  padding: 1rem;
+  border-radius: 8px;
+  
+}
+
+.info-number{
+    font-size: xxx-large;
+    margin: 0px;
+}
+
+.info-year{
+    margin: 0px;
+    
+    font-size: x-large;
+    font-weight: bold
+}
+
+.info-text{
+    margin: 0px;
+}
+
+#margin-b{
+    margin-bottom: 25px;
+}
+
+
+
+@media (max-width: 768px) {
+    .container-main-page-aboutUs {
+      flex-direction: column;
+    }
+  
+    .main-page-1,
+    .main-page-2 {
+      width: 100%;
+    }
+  
+    .main-page-1 > p {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  
+    .main-page-2 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .info {
+      width: 90%;
+      text-align: center;
+    }
+  
+    .info-number {
+      font-size: 2.2rem;
+    }
+  
+    .info-year {
+      font-size: 1.2rem;
+    }
+  
+    .info-text {
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+  }
+  

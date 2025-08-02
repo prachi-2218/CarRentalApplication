@@ -1,0 +1,57 @@
+.find-btn {
+  height: 42px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-end;
+}
+
+.find-btn.red {
+  background-color: #cc1d1d;
+  color: white;
+  width: 220px;
+  margin-left: 10px;
+}
+
+.find-btn.red:hover {
+  background-color: #c30000;
+}
+
+/* For screens 1203px or smaller */
+@media (max-width: 1203px) {
+  .car-filters-container .row {
+    flex-wrap: wrap; /* Ensures the elements wrap when needed */
+    justify-content: space-between; /* Adjusts spacing to avoid overflow */
+  }
+
+  .find-btn.red {
+    width: 100%; /* Forces button to be full width on smaller screens */
+    margin-top: 16px;
+    font-size: 16px;
+    height: 48px;
+    align-self: center;
+    margin-left: 0; /* Remove left margin when it wraps */
+  }
+}
+
+/* For screens 768px or smaller */
+@media (max-width: 768px) {
+  .find-btn.red {
+    width: 100%; /* Ensures button is full width */
+    margin-top: 16px;
+    font-size: 16px;
+    height: 48px;
+    align-self: center;
+  }
+}
+
+/* For even smaller screens (480px and below) */
+@media (max-width: 480px) {
+  .find-btn.red {
+    height: 44px;
+    font-size: 15px;
+  }
+}

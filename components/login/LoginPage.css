@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  padding: 0;
+}
+ 
+ 
+ 
+/* Left side - Image */
+.image-container {
+  display: none;
+  width: 50%;
+  position: relative;
+}
+ 
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+ 
+ 
+/* Right side - Form */
+.form-container {
+  width: 100%;
+  background-color: #fffbf3;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.form-content {
+  max-width: 480px;
+  width: 100%;
+}
+ 
+/* Typography */
+.login-form-title {
+  font-size: 3.8rem;
+    text-align: center;
+    font-weight: 620;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+ 
+.login-form-subtitle {
+  color: #666666;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+ 
+/* Form elements */
+.login-form {
+  width: 100%;
+}
+ 
+.form-group {
+  margin-bottom: 0.1rem;
+ 
+}
+ 
+.form-label {
+  font-size: 0.9rem;
+  display: block;
+  color: #666666;
+  margin-bottom: 0.25rem;
+}
+ 
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dcdcdd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+ 
+.error-input {
+ 
+  border-color: #cc1d1d;
+}
+ 
+.error-message {
+ 
+  color: #cc1d1d;
+  font-size: 0.7rem;
+}
+ 
+/* Name fields layout */
+/* .name-fields {
+  display: flex;
+  gap: 1rem;
+}
+ 
+.name-fields .form-input {
+  width: 50%;
+} */
+ 
+/* Password field with eye icon */
+.password-container {
+  position: relative;
+}
+ 
+.eye-button {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+ 
+}
+ 
+ 
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #cc1d1d;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Login link */
+.signup-link {
+  text-align: center;
+    color: #666666;
+    margin-top: 1.5rem;
+    font-size: 19px;
+}
+ 
+.signup-link a {
+  color: #000000;
+    font-weight: 600;
+    font-size: 19px;
+    text-decoration: none;
+}
+ 
+/* Container layout */
+.main_container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+ 
+ 
+ 
+/* Right side - Form */
+.form-container {
+  width: 100%;
+  background-color: #fffbf3;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.form-content {
+  max-width: 480px;
+  width: 100%;
+}
+ 
+/* Typography */
+.form-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #000000;
+}
+ 
+.form-subtitle {
+  color: #666666;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+ 
+/* Form elements */
+.signup-form {
+  width: 100%;
+}
+ 
+.form-label {
+  font-size: 0.8rem;
+  display: block;
+  color: #666666;
+  margin-bottom: 0.25rem;
+}
+ 
+ 
+.form-label-2 {
+  font-size: 0.8rem;
+  display: block;
+  color: #666666;
+  margin-bottom: 0.25rem;
+  margin-top:.3rem;
+}
+ 
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dcdcdd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+ 
+.error-input {
+ 
+  border-color: #cc1d1d;
+}
+ 
+/* .error-message {
+ 
+  color: #cc1d1d;
+  font-size: 0.7rem;
+} */
+ 
+.name-fields {
+  display: flex;
+  gap: 1rem;
+}
+ 
+.name-fields .form-input {
+  width: 50%;
+}
+ 
+/* Password field with eye icon */
+.password-container {
+  position: relative;
+}
+ 
+.eye-button {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  padding-top:40px;
+}
+ 
+.cancel-button {
+  width: 50%;
+  padding: 0.75rem;
+  background-color: #fffbf3;
+  border: 1px solid #dcdcdd;
+ 
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+ 
+.register-button {
+  width: 50%;
+  padding: 0.75rem;
+  background-color: #cc1d1d;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+ 
+.error-message {
+color: red;
+font-size: 12px;
+min-height: 18px;
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+ 
+.error-message:empty {
+visibility: hidden;
+opacity: 0;
+}
+ 
+.error-message:not(:empty) {
+visibility: visible;
+opacity: 1;
+}
+ 
+.error-input {
+border: 1px solid red !important;
+}
+ 
+.error-message-container{
+display: flex;
+justify-content: space-between;
+}
+ 
+@keyframes toast_animation {
+ 
+0%{
+  top:-100px
+}
+ 
+100%{
+  top:10px
+}
+}
+ 
+ 
+#toast_wrapper{
+position: absolute;
+top: 10px;
+animation: forwards 1s toast_animation;
+}
+ 
+.error-message-container{
+  position: absolute;
+}
+/* Responsive styles */
+@media (min-width: 768px) {
+  .image-container {
+    display: block;
+  }
+ 
+  .form-container {
+    width: 50%;
+  }
+}

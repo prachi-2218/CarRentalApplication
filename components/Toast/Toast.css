@@ -1,0 +1,75 @@
+/* Toast Container */
+/* .toast {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 4px;
+  padding: 12px 16px;
+  position: fixed; 
+  z-index: 9999; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  max-width: 300px;
+  width: 100%;
+} */
+
+/* Toast Icon */
+.toast-icon {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+/* Make the icon larger for alert toasts */
+.toast-alert .toast-icon {
+  font-size: 36px  !important;  /* Larger size for alert */
+}
+
+/* Toast Content */
+.toast-content {
+  flex: 1;
+}
+
+/* Toast Title */
+.toast-content strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Toast Message */
+.toast-content p {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+/* Close Button */
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  color: inherit; /* Use the same text color as the toast */
+}
+
+/* ===== Different Styles for ALERT (error) ===== */
+.toast-alert {
+  background-color: #f44336; /* Bright red background for alert */
+  border: 1px solid #0a0a0a; /* Red border */
+  color: black; /* Black text inside */
+}
+
+/* Remove the color override for the alert icon */
+.toast-alert .toast-content strong {
+  color: black; /* Title black */
+}
+
+.toast-alert .toast-content p {
+  color: black; /* Message black */
+}
+
+.toast-alert .toast-close {
+  color: black; /* Close button black */
+}
+

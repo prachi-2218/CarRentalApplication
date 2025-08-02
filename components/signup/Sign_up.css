@@ -1,0 +1,259 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container layout */
+  .main_container {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Left side - Image */
+  .image-container {
+    display: none;
+    width: 50%;
+    position: relative;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+  
+  /* Right side - Form */
+  .form-container {
+    width: 100%;
+    background-color: #fffbf3;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-content {
+    max-width: 480px;
+    width: 100%;
+  }
+  
+  /* Typography */
+  .form-title {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .form-subtitle {
+    color: #666666;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Form elements */
+  .signup-form {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 0.1rem;
+
+  }
+  
+  .form-label {
+    font-size: 0.6rem;
+    display: block;
+    color: #666666;
+    margin-bottom: 0.25rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #dcdcdd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .error-input {
+
+    border-color: #cc1d1d;
+  }
+  
+  .error-message {
+
+    color: #cc1d1d;
+    font-size: 0.7rem;
+  }
+
+
+  
+  /* Name fields layout */
+  .name-fields {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .name-fields .form-input {
+    width: 50%;
+  }
+  
+  /* Password field with eye icon */
+  .password-container {
+    position: relative;
+  }
+  
+  .eye-button {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .cancel-button {
+    width: 50%;
+    padding: 0.75rem;
+    background-color: #fffbf3;
+    border: 1px solid #dcdcdd;
+    border-radius: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .register-button {
+    width: 50%;
+    padding: 0.75rem;
+    background-color: #cc1d1d;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Login link */
+  .login-link {
+    text-align: center;
+    color: #666666;
+    margin-top: 1rem;
+    font-size: 14px;
+    letter-spacing: 0%;
+
+  }
+  
+  .login-link a{
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0%;
+    text-decoration: none;
+  }
+  
+
+
+  .error-message {
+  color: red;
+  min-height: 18px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.error-message:empty {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.error-message:not(:empty) {
+  visibility: visible;
+  opacity: 1;
+}
+
+.error-input {
+  border: 1px solid red !important;
+}
+
+.error-message-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes toast_animation {
+
+  0%{
+    top:-100px
+  }
+  
+  100%{
+    top:10px
+  }
+}
+
+
+#toast_wrapper{
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: forwards 1s toast_animation;
+}
+
+input::placeholder {
+  font-size: 12px;
+}
+
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .image-container {
+      display: block;
+    }
+  
+    .form-container {
+      width: 50%;
+    }
+
+    #toast_wrapper{
+      width: 50%;
+    }
+  }
+  
+  input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+
+  @media (max-width: 500px) {
+    .error-message{
+      font-size: 0.6rem;
+    }
+  }

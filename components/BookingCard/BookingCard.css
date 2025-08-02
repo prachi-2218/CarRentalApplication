@@ -1,0 +1,281 @@
+/* Reset & Base */
+.shimmer-wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+}
+
+.shimmer-line {
+  height: 16px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.shimmer-line.short {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: #fffbf3;
+}
+
+/* Page Wrapper with 2px top and left padding from screen */
+.page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+/* Booking Card Container - Default for larger screens (4 cards per row) */
+.booking-card-container {
+    flex: 1 1 calc((100% - 3 * 24px - 4px) / 4); /* 4 cards with gap and 2px screen pad */
+    max-width: calc((100% - 3 * 24px - 4px) / 4);
+    background-color: #f0f0f0;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+    min-height: 335px; /* Ensures consistent card height */
+}
+
+/* Car Image */
+.car-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.car-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Reserved Tag */
+.reserved-tag {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    left: 8px;
+    width: 79px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* Car Info */
+.car-name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+}
+
+.order-id {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+    margin: 0;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.cancel-button,
+.edit-button {
+    flex: 1;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.edit-button {
+    background-color: #cc1d1d;
+    color: #fff;
+}
+
+/* Support Text */
+.support-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+}
+
+.support-chat {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* Add the following CSS to hide the buttons without changing their layout */
+.hidden {
+    visibility: hidden;
+}
+
+/* Status Tag */
+.status-tag {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8px;
+    left: 8px;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 1;
+    padding: 4px 12px; /* Padding adjusts based on text size */
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+/* Order Label */
+.order-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+/* Leave Feedback button styling */
+.feedback-button {
+    width: 100%;
+    height: 42px;
+    background-color: #cc1d1d;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding-left: 10px;  /* Add padding for mobile */
+    }
+
+    .booking-card-container {
+        flex: 1 1 calc(50% - 12px); /* 2 cards per row */
+        max-width: calc(50% - 12px);
+    }
+
+    .car-image-wrapper {
+        height: 140px; /* Smaller image size */
+    }
+
+    .car-name {
+        font-size: 16px; /* Slightly smaller text */
+    }
+
+    .order-id {
+        font-size: 12px; /* Smaller text for order ID */
+    }
+
+    .cancel-button,
+    .edit-button {
+        height: 36px; /* Smaller buttons */
+        font-size: 12px;
+    }
+}
+
+/* Extra small screens (very small phones) */
+@media (max-width: 480px) {
+    .booking-card-container {
+        flex: 1 1 calc(100% - 12px); /* 1 card per row */
+        max-width: 100%;
+    }
+
+    .car-image-wrapper {
+        height: 120px; /* Even smaller image */
+    }
+
+    .car-name {
+        font-size: 14px; /* Smaller text */
+    }
+
+    .order-id {
+        font-size: 12px; /* Keep the size small */
+    }
+
+    .cancel-button,
+    .edit-button {
+        height: 32px; /* Even smaller buttons */
+        font-size: 12px;
+    }
+}
+.view-feedback-button {
+    width: 100%;
+    height: 42px;
+    background-color: #f0f0f0; /* Same as card */
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #000;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  

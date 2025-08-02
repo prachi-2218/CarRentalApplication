@@ -1,0 +1,102 @@
+@import "tailwindcss";
+body{
+    margin:0;
+    padding:0;
+}
+.footer {
+    background-color: #fffbf3;
+    font-family: sans-serif;
+    padding: 1rem 1.3rem;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .logo-footer {
+    font-size: 1.1rem;
+    
+
+  }
+  
+  .logo-footer span {
+    color: #cc0000;
+    font-weight: 600;
+
+  }
+  
+  .navbar-footer {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .footer-img1 {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-img2 {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .footer-img3 {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: gray;
+  }
+  
+  /* RESPONSIVE - between 300px and 600px */
+  @media (max-width: 600px) {
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .logo-footer {
+      order: 1;
+    }
+  
+    .navbar-footer {
+      order: 2;
+      gap: 1rem;
+    }
+  
+    .icons {
+      order: 3;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    .footer-bottom {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+  

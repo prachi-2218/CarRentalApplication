@@ -1,0 +1,26 @@
+@import "tailwindcss";
+.field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .gray-label {
+    color: #666;
+    font-size: 13px;
+  }
+  
+  .compact select {
+    padding: 6px 8px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  

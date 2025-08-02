@@ -1,0 +1,48 @@
+@import "tailwindcss";
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    align-items: center;
+  }
+  
+  .page-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+    color: black;
+  }
+  
+  .page-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .active-page {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    cursor: default;
+  }
+  
+  .arrow-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .arrow-button:hover {
+    color: #000;
+  }
+  

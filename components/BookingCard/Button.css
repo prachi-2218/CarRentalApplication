@@ -1,0 +1,57 @@
+/* Button.css */
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+  }
+  
+  .cancel {
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    color: #000;
+    height: 42px;
+    flex: 1;
+    
+  }
+  
+  .edit {
+    background-color: #cc1d1d;
+    color: #fff;
+    height: 42px;
+    flex: 1;
+  }
+  
+  .feedback {
+    background-color: #cc1d1d;
+    color: #fff;
+    width: 100%;
+    height: 42px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .view-feedback {
+    background-color: #f0f0f0;
+    color: #000;
+    width: 100%;
+    height: 42px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #000;
+  }
+  
+  .support-chat {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  
