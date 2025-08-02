@@ -1,0 +1,117 @@
+const { connectToDatabase } = require("./utils/mongo");
+const { ObjectId } = require("mongodb");
+
+module.exports = async (event) => {
+  try {
+    const { db } = await connectToDatabase();
+
+    const recentFeedbacks = await db.collection("feedbacks").aggregate([
+      { $sort: { date: -1 } },
+      { $limit: 5 },
+      {
+        $addFields: {
+          carObjectId: { $toObjectId: "$car_id" },
+          bookingObjectId: { $toObjectId: "$booking_id" }
+        }
+      },
+      {
+        $lookup: {
+          from: "cars",
+          localField: "carObjectId",
+          foreignField: "_id",
+          as: "car"
+        }
+      },
+      {
+        $lookup: {
+          from: "bookings",
+          localField: "bookingObjectId",
+          foreignField: "_id",
+          as: "booking"
+        }
+      },
+      { $unwind: { path: "$car", preserveNullAndEmptyArrays: true } },
+      { $unwind: { path: "$booking", preserveNullAndEmptyArrays: true } },
+      {
+        $addFields: {
+          userObjectId: { $toObjectId: "$booking.userId" }
+        }
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "userObjectId",
+          foreignField: "_id",
+          as: "user"
+        }
+      },
+      { $unwind: { path: "$user", preserveNullAndEmptyArrays: true } },
+      {
+        $project: {
+          feedbackId: "$_id",
+          feedbackText: "$feedback_text",
+          rating: 1,
+          date: {
+            $dateToString: {
+              format: "%d.%m.%Y",
+              date: "$date"
+            }
+          },
+          carImageUrl: {
+            $ifNull: ["$car.imageUrl", "https://application.s3.eu-central-1.amazonaws.com/img/cars/default.jpg"]
+          },
+          carModel: {
+            $ifNull: ["$car.model", "Unknown model"]
+          },
+          orderHistory: {
+            $cond: {
+              if: { $ifNull: ["$booking", false] },
+              then: {
+                $concat: [
+                  "#", { $toString: "$booking.orderNumber" }, " (",
+                  { $dateToString: { format: "%d.%m.%Y", date: "$booking.date" } },
+                  ")"
+                ]
+              },
+              else: "Unknown order"
+            }
+          },
+          author: {
+            $cond: {
+              if: { $ifNull: ["$user", false] },
+              then: {
+                $concat: [
+                  "$user.firstName", " ", { $substr: ["$user.lastName", 0, 1] }, ".",
+                  ", ", "$user.city", ", ", "$user.country"
+                ]
+              },
+              else: "Unknown author"
+            }
+          }
+        }
+      }
+    ]).toArray();
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET"
+      },
+      body: JSON.stringify({ content: recentFeedbacks })
+    };
+
+  } catch (error) {
+    console.error("Error fetching recent feedbacks:", error);
+    return {
+      statusCode: 500,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET"
+      },
+      body: JSON.stringify({ error: error.message })
+    };
+  }
+};
