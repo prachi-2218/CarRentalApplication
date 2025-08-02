@@ -4,7 +4,7 @@ const { MongoClient } = require("mongodb");
 let cachedClient = null;
 let cachedDb = null;
 
-const uri = "mongodb+srv://team7:team7@carrentbackend.awvwx0v.mongodb.net/";
+const uri = "<put it here>";
 const dbName = "carrent_db";
 
 async function connectToDatabase() {
