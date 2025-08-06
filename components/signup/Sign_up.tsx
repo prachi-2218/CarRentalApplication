@@ -217,7 +217,7 @@ const Sign_up: React.FC = () => {
   async function Register_user() {
     try {
       set_register(true)
-      const fetch_data = await fetch("https://436jr2ajxe.execute-api.ap-southeast-2.amazonaws.com/prod/auth/sign-up", {
+      const fetch_data = await fetch("", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
