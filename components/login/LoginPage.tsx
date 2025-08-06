@@ -68,7 +68,7 @@ const LoginPage: React.FC = () => {
 
   const Login_User = async () => {
     try {
-      const response = await fetch("https://436jr2ajxe.execute-api.ap-southeast-2.amazonaws.com/prod/auth/sign-in", {
+      const response = await fetch("", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
